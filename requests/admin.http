@@ -1,0 +1,43 @@
+### [POST] retrieve token
+POST http://localhost:9000/auth/user/emailpass
+Content-Type: application/json
+
+{
+  "email": "cellthium.dev@gmail.com", 
+  "password": "Test1234"
+}
+
+### [POST] create brand
+POST http://localhost:9000/admin/brands
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3Rvcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEiLCJhY3Rvcl90eXBlIjoidXNlciIsImF1dGhfaWRlbnRpdHlfaWQiOiJhdXRoaWRfMDFKSlM1REVZMEdXQkE0WlBRMFNHNFlOOVMiLCJhcHBfbWV0YWRhdGEiOnsidXNlcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEifSwiaWF0IjoxNzM4NTc1NDY0LCJleHAiOjE3Mzg2NjE4NjR9._-gqrk3saDzc2riDGP-9RdMuVdsHvsA9uFsDl7JMnJE
+
+{
+  "name": "Acme"
+}
+
+### [POST] create product
+POST http://localhost:9000/admin/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3Rvcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEiLCJhY3Rvcl90eXBlIjoidXNlciIsImF1dGhfaWRlbnRpdHlfaWQiOiJhdXRoaWRfMDFKSlM1REVZMEdXQkE0WlBRMFNHNFlOOVMiLCJhcHBfbWV0YWRhdGEiOnsidXNlcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEifSwiaWF0IjoxNzM4NTc1NDY0LCJleHAiOjE3Mzg2NjE4NjR9._-gqrk3saDzc2riDGP-9RdMuVdsHvsA9uFsDl7JMnJE
+
+{
+  "title": "Product 1",
+  "options": [
+    {
+      "title": "Default option", 
+      "values": ["Default option value"] 
+    }
+  ],
+  "additional_data": {
+    "brand_id": "01JK5JW6SYTXCNQTX1WPAN9CC6"
+  }
+}
+
+### [GET] retrieve product's brand
+GET http://localhost:9000/admin/products?fields=+brand.*
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3Rvcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEiLCJhY3Rvcl90eXBlIjoidXNlciIsImF1dGhfaWRlbnRpdHlfaWQiOiJhdXRoaWRfMDFKSlM1REVZMEdXQkE0WlBRMFNHNFlOOVMiLCJhcHBfbWV0YWRhdGEiOnsidXNlcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEifSwiaWF0IjoxNzM4NTc1NDY0LCJleHAiOjE3Mzg2NjE4NjR9._-gqrk3saDzc2riDGP-9RdMuVdsHvsA9uFsDl7JMnJE
+
+### [GET] retrieve product's brand
+GET http://localhost:9000/admin/brands
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3Rvcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEiLCJhY3Rvcl90eXBlIjoidXNlciIsImF1dGhfaWRlbnRpdHlfaWQiOiJhdXRoaWRfMDFKSlM1REVZMEdXQkE0WlBRMFNHNFlOOVMiLCJhcHBfbWV0YWRhdGEiOnsidXNlcl9pZCI6InVzZXJfMDFKSlM1REVSVkJGTTM3WUhSU0hYUUtIRzEifSwiaWF0IjoxNzM4NTc1NDY0LCJleHAiOjE3Mzg2NjE4NjR9._-gqrk3saDzc2riDGP-9RdMuVdsHvsA9uFsDl7JMnJE
